@@ -7,9 +7,11 @@ def text_to_pdf(input_text, output_pdf):
         c = canvas.Canvas(output_pdf, pagesize=letter)
         hh=input_text.split("\n")
         for j in range(len(hh)):
-            print(hh[j])
-            c.drawString(y, 700,hh[j])
-            y=y+40
+            try:
+                c.drawString(y, 700,hh[j])
+                y=y+20
+            except:
+                xgate=""
         c.save()
 
         print(f"Arquivo PDF gerado com sucesso: {output_pdf}")

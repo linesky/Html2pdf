@@ -2,13 +2,13 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import sys
 def text_to_pdf(input_text, output_pdf):
-    y=100;
+    y=700;
     try:
         c = canvas.Canvas(output_pdf, pagesize=letter)
         hh=input_text.split("\n")
         for j in range(len(hh)):
             try:
-                c.drawString(y, 700,hh[j])
+                c.drawString(30,y,hh[j])
                 y=y+20
             except:
                 xgate=""
